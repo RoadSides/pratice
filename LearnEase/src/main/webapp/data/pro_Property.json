@@ -1,0 +1,19 @@
+{
+   "property": [{
+       "id":1,
+       "name":"必修",
+       "parentId": 1
+   },{
+        "id":2,
+        "name":"专业必修",
+       "parentId": 2
+    },{
+        "id":3,
+        "name":"专业选修",
+       "parentId": 2
+    },{
+       "id":4,
+       "name":"选修",
+       "parentId": 1
+   }]
+}

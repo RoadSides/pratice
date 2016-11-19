@@ -1,0 +1,55 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+ 
+    <div class="navbar">
+        <div class="navbar-inner">
+                <ul class="nav pull-right">   
+                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">帮助</a></li>
+                    <li id="fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i> bob
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#">我的信息</a></li>
+                            <li><a tabindex="-1" href="sign-in.html">注销</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <a class="brand" href="${pageContext.request.contextPath }/index.action"><span class="first">Flight</span> <span class="second">  Manage   System</span></a>
+        </div>
+    </div>
+    
+
+
+    
+    <div class="sidebar-nav">
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>基础信息操作</a>
+        <ul id="dashboard-menu" class="nav nav-list collapse in">
+      
+            <li ><a href="${ pageContext.request.contextPath }/flightAction_findAll.action?page=1">查询所有航班信息</a></li>
+		    <li ><a href="${ pageContext.request.contextPath }/flightAction_toinsert.action">航班信息插入</a></li>
+        </ul>
+
+     
+
+        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>按站查询</a>
+        <ul id="legal-menu" class="nav nav-list collapse">
+           	<li ><a href="${ pageContext.request.contextPath }/flightAction_startfind.action">按起点站查询</a></li>
+			<li ><a href="${ pageContext.request.contextPath }/flightAction_endfind.action">按终点站查询</a></li>
+        </ul>
+
+   
+		<a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-legal"></i>按时间查询</a>
+        <ul id="error-menu" class="nav nav-list collapse">
+            <li ><a href="${ pageContext.request.contextPath }/flightAction_starttimefind.action">按起飞时间查询</a></li>
+            <li ><a href="${ pageContext.request.contextPath }/flightAction_endtimefind.action">按到达时间查询</a></li>
+
+        </ul>
+	
+	   <a class="nav-header"  href="${ pageContext.request.contextPath }/flightAction_pricefind.action"><i class="icon-legal"></i>按票价查询</a>
+	   <a class="nav-header"  href="${ pageContext.request.contextPath }/flightAction_flightnofind.action"><i class="icon-legal"></i>按航班号查询</a>
+
+    </div>

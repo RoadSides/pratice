@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.jyu.LearnEase.domain">
+
+	<class name="Answer" table="answer">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<discriminator column="answerType" type="string"></discriminator>
+		
+		<!-- 问题和答案是一对一的关系 -->
+		<one-to-one name="question" class="Question"></one-to-one>
+		
+		<!-- 将答案存为blob -->
+		<!-- <property name="answerBlob" type="blob"></property> -->
+		
+		<!-- 选择题的参考答案 -->
+		<subclass name="AnswerSelect" discriminator-value="answerSelect">
+			<set name="answerSets" table="answerSet" cascade="save-update" lazy="false">
+				<key column="answerId"></key>
+				<element column="answerContent" type="string"></element>
+			</set>
+		</subclass>
+		
+		<!--        其他题型答案
+		<subclass name="AnswerSelect" discriminator-value="answerSelect"></subclass>		
+		 -->
+		 
+	</class>
+
+</hibernate-mapping>

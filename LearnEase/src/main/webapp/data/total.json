@@ -1,0 +1,96 @@
+{
+    "credit": 160,
+    "proportion": 100,
+    "totalUnit": "2579",
+    "practiveUnit": "2114",
+    "theroyUnit": "465",
+    "unitTerm1": 25,
+    "unitTerm2": 27,
+    "unitTerm3": 18,
+    "unitTerm4": 19,
+    "unitTerm5": 21,
+    "unitTerm6": 19,
+    "unitTerm7": 13,
+    "unitTerm8": 0,
+    "demo": "",
+    "public": {
+        "id": 1,
+        "name": "通识教育课程",
+        "child": [
+            {
+                "name": "必修",
+                "credit": 38,
+                "proportion": 26.88,
+                "totalUnit": "684+2周",
+                "practiveUnit": "46+2周",
+                "theroyUnit": "638",
+                "unitTerm1": 5,
+                "unitTerm2": 6,
+                "unitTerm3": 4,
+                "unitTerm4": 4,
+                "unitTerm5": 0,
+                "unitTerm6": 0,
+                "unitTerm7": 0,
+                "unitTerm8": 0,
+                "demo": ""
+            },
+            {
+                "name": "选修",
+                "credit": 12,
+                "proportion": 7.5,
+                "totalUnit": "192",
+                "practiveUnit": "0",
+                "theroyUnit": "192",
+                "unitTerm1": 0,
+                "unitTerm2": 2,
+                "unitTerm3": 2,
+                "unitTerm4": 2,
+                "unitTerm5": 2,
+                "unitTerm6": 2,
+                "unitTerm7": 2,
+                "unitTerm8": 0,
+                "demo": ""
+            }
+        ]
+    },
+    "major": {
+        "id": 2,
+        "name": "专业课程",
+        "child": [
+            {
+                "name": "必修",
+                "credit": 75,
+                "proportion": 46.9,
+                "totalUnit": "1061",
+                "practiveUnit": "836",
+                "theroyUnit": "225",
+                "unitTerm1": 20,
+                "unitTerm2": 15,
+                "unitTerm3": 12,
+                "unitTerm4": 7,
+                "unitTerm5": 11,
+                "unitTerm6": 4,
+                "unitTerm7": 0,
+                "unitTerm8": 0,
+                "demo": ""
+            },
+            {
+                "name": "选修",
+                "credit": 35,
+                "proportion": 21.9,
+                "totalUnit": "587",
+                "practiveUnit": "359",
+                "theroyUnit": "228",
+                "unitTerm1": 0,
+                "unitTerm2": 4,
+                "unitTerm3": 0,
+                "unitTerm4": 6,
+                "unitTerm5": 8,
+                "unitTerm6": 13,
+                "unitTerm7": 2,
+                "unitTerm8": 11,
+                "demo": ""
+            }
+        ]
+    }
+}

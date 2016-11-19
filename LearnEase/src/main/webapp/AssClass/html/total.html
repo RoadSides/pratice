@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<div class="container">
+	<div class="row">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong style="font-size:19px;"><i class="icon-list"></i>
+						课程类别汇总
+					</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="row">
+        <a href="#/TotalClass" class="btn btn-primary" onclick="getTotalStaticData();">
+            导入&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </a>
+        <a href="#/TotalClass" class="btn btn-success">
+            导出&nbsp;<span class="glyphicon glyphicon-export" aria-hidden="true"></span>
+        </a>
+        <table class="table table-responsive table-bordered" id="tableTotalStatic" valign="center">
+            <tr class="info">
+                <th rowspan="2">序号</th>
+                <th colspan="2" rowspan="2">课程类别</th>
+                <th colspan="5" >学时数</th>
+                <th colspan="8" >各学期周学时数</th>
+                <th rowspan="2" >备注</th>
+            </tr>
+            <tr class="info">
+                <th>学分</th>
+                <th>占总学分%</th>
+                <th>合计</th>
+                <th>理论</th>
+                <th>实践</th>
+                <th colspan="2">一年级</th>
+                <th colspan="2">二年级</th>
+                <th colspan="2">三年级</th>
+                <th colspan="2">四年级</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

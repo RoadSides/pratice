@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pra.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="keshan/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {		
+		$("#addUserBtn").click(function() {
+			var sendData = $("#form1").serialize();
+			$.ajax({
+				"type" : "POST",
+				"url" : "pra.action?time=" + new Date().getTime(),
+				"data" : sendData,
+				"success" : function(backData, textStatus, ajax) {
+					var obj = backData.user;
+					alert(backData.name);
+				}
+			});
+		});
+		
+	});
+
+	
+</script>
+</head>
+
+<body>
+	<form id="form1">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text" name="user.name" id="text1" /></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="button" value="提交"
+					id="addUserBtn" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

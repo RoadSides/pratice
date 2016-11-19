@@ -1,0 +1,133 @@
+<meta charset="UTF-8">
+<div class="container">
+	<div class="row">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong style="font-size:19px;"><i class="icon-list"></i>
+						课程设置计划
+					</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="row">
+        <a href="#/AssClass" class="btn btn-primary" onclick="loadAddModal();">
+            添加&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </a>
+        <a href="#/AssClass" class="btn btn-success">
+            导出&nbsp;<span class="glyphicon glyphicon-export" aria-hidden="true"></span>
+        </a>
+        <table class="table table-responsive table-bordered" id="tables" valign="center">
+                <tr class="info">
+                    <th colspan="2">课程类型</th>
+                    <th rowspan="2" class="col-md-2">课程名称</th>
+                    <th rowspan="2" >学分</th>
+                    <th rowspan="2" >总学时</th>
+                    <th colspan="2" >学时类型</th>
+                    <th colspan="8" class="col-md-4">按学期周期学时分配</th>
+                    <th rowspan="2" class="col-md-1">备注</th>
+                </tr>
+                <tr class="info">
+                    <th>性质</th>
+                    <th>类型</th>
+                    <th>理论</th>
+                    <th>实践</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                </tr>
+        </table>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <div id="tableTotalPanel" class="row" style="display: none;">
+        <table class="table table-responsive table-bordered" id="tableTotal" valign="center">
+            <tr class="info">
+                <th rowspan="2">序号</th>
+                <th colspan="2" rowspan="2">课程类别</th>
+                <th colspan="5" >学时数</th>
+                <th colspan="8" >各学期周学时数</th>
+                <th rowspan="2" >备注</th>
+            </tr>
+            <tr class="info">
+                <th>学分</th>
+                <th>占总学分%</th>
+                <th>合计</th>
+                <th>理论</th>
+                <th>实践</th>
+                <th colspan="2">一年级</th>
+                <th colspan="2">二年级</th>
+                <th colspan="2">三年级</th>
+                <th colspan="2">四年级</th>
+            </tr>
+        </table>
+    </div>
+    <!--选择课程 Modal -->
+    <div class="modal fade" id="selectProModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">选择课程性质</h4>
+                </div>
+                <div class="modal-body" id="pro_modal_body">
+                    <select id="selectProContent" class="form-control">
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-success" onclick="loadedAdd();">确认</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--选择课程 Modal -->
+    <div class="modal fade" id="selectTypeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">选择课程类型</h4>
+                </div>
+                <div class="modal-body" id="type_modal_body">
+                    <select id="selectTypeContent" class="form-control">
+                    </select>
+                    <input id="oneChild" type="hidden"/>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-success" onclick="loadedOneChild();">确认</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--选择第三级课程 Modal -->
+    <div class="modal fade" id="selectClassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">选择课程名称</h4>
+                </div>
+                <div class="modal-body" id="class_modal_body">
+                    <select id="selectClassContent" class="form-control">
+                    </select>
+                    <input id="two1Child" type="hidden"/>
+                    <input id="two2Child" type="hidden"/>
+                    <input id="selectId" type="hidden"/>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-success" onclick="loadedTwoChild();">确认</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

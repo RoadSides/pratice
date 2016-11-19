@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.jyu.LearnEase.domain">
+
+	<class name="Question" table="question">
+		<id name="id" type="string">
+			<generator class="uuid" />
+		</id>
+
+		<discriminator column="question_" type="string"></discriminator>
+
+		<property name="difficulty" type="integer"></property>
+		<property name="questionName" type="string"></property>
+		
+		<!-- 考虑：以下两个属性要不要作为表的字段 -->
+		<property name="description" type="string"></property>
+		<property name="analyse" type="string"></property>
+		 
+		<property name="author" type="string"></property>
+		<property name="createTime" type="date"></property>
+
+		<!-- 问题与答案是一对一的关系 -->
+		<many-to-one name="answer" unique="true" class="Answer"
+			column="answerId" cascade="all" lazy="false"></many-to-one>
+
+		<!-- 问题与标签 -->
+		<set name="labels" table="question_label" cascade="save-update"
+			lazy="true">
+			<key column="QuestionId"></key>
+			<many-to-many column="LabelId" class="QuestionLabel"></many-to-many>
+		</set>
+
+		<!-- 题型, 枚举类的映射 -->
+		<property name="questionType">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">
+					org.jyu.LearnEase.utils.QuestionType
+				</param>
+			</type>
+		</property>
+
+		<!-- 问题存为blob -->
+		<!-- <property name="questionBlob" type="blob"></property> -->
+
+		<!-- 选择题 -->
+		<subclass name="QuestionSelect" discriminator-value="questionSelect">
+			<map name="options" table="learn_option" cascade="all" lazy="false">
+				<key column="questionId"></key>
+				<map-key column="choice" type="string"></map-key>
+				<one-to-many class="Option"/>
+			</map>
+		</subclass>
+
+		<!-- 其他题型，subclass -->
+
+	</class>
+
+</hibernate-mapping>

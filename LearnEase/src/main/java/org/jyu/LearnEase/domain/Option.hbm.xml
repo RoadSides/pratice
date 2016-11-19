@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.jyu.LearnEase.domain">
+
+	<class name="Option" table="learn_option">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="content" type="string"/>
+		
+		<many-to-one name="question" class="Question" column="questionId"></many-to-one>
+	
+
+	</class>
+
+</hibernate-mapping>

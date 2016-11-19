@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.jyu.LearnEase.domain">
+
+	<class name="Label" table="label" abstract="true">
+		<id name="id" type="string">
+			<generator class="assigned" />
+		</id>
+		<property name="labelName"/>
+		<!-- 
+		<component name="user" class="User">
+			<property name="id" column="userId"></property>
+			<property name="name" column="userName"></property>
+		</component>
+		 -->
+		<many-to-one name="user" column="userId" class="User"></many-to-one>
+		<property name="count" type="long"/>
+		
+		<!-- 存放问题的label -->
+		<union-subclass name="QuestionLabel" table="QuestionLabel">
+			<set name="questions" table="question_label">
+				<key column="LabelId"></key>
+				<many-to-many column="QuestionId" class="Question"></many-to-many>
+			</set>
+		</union-subclass>
+		
+	</class>
+
+</hibernate-mapping>

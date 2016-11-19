@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.jyu.LearnEase.domain">
+
+	<class name="Solution" table="solution">
+		<id name="id" type="string">
+			<generator class="uuid" />
+		</id>
+
+		<discriminator column="solutionType" type="string"></discriminator>
+
+		<!-- 对应的问题：组件映射，在solutio表中存放question的id -->
+		<!-- 
+		<component name="question" class="Question" >
+			<property name="id" type="string" column="questionId"></property>
+			<property name="questionName" type="string" column="questionName"></property>
+		</component>
+ 		-->
+ 		<many-to-one name="question" column="questionId" class="Question"></many-to-one>
+
+		<!-- 答题的用户：组件映射，在solution表中存放user的id -->
+		<!-- 
+		<component name="user" class="User">
+			<property name="id" type="long" column="userId"></property>
+			<property name="name" type="string" column="userName"></property>
+		</component>
+		 -->
+		 <many-to-one name="user" column="userId" class="User"></many-to-one>
+
+		<!-- 答题日期 -->
+		<property name="date" column="date" type="date"></property>
+
+		<!-- 答题状态 -->
+		<property name="state" column="state" type="integer"></property>
+
+		<!-- 以blob的形式存储本类 -->
+		<!-- <property name="solutionBlob" column="solutionBlob" type="blob"></property> -->
+
+		<!-- 用户选择题答案 -->
+		<subclass name="SolutionSelect" discriminator-value="SolutionSelect">
+			<set name="solutionSet" table="learn_solution">
+				<key column="solutionId"></key>
+				<element column="content" type="string"></element>
+			</set>
+		</subclass>
+
+		<!-- 提交其他题型答案 -->
+
+	</class>
+
+</hibernate-mapping>

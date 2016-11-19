@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html ng-app="QMaker" ng-controller = "QMakerCtrl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<title>LearnEase</title>
+<!--=== CSS ===-->
+
+	<!-- Bootstrap -->
+	<link href="melon/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- jQuery UI -->
+	<!--<link href="melon/plugins/jquery-ui/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />-->
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="melon/plugins/jquery-ui/jquery.ui.1.10.2.ie.css"/>
+	<![endif]-->
+
+	<!-- Theme -->
+	<link href="melon/assets/css/main.css" rel="stylesheet" type="text/css" /> 	
+	<link href="melon/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+	<link href="melon/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="melon/assets/css/icons.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" href="melon/assets/css/fontawesome/font-awesome.min.css">
+	<!--[if IE 7]>
+		<link rel="stylesheet" href="melon/assets/css/fontawesome/font-awesome-ie7.min.css">
+	<![endif]-->
+
+	<!--[if IE 8]>
+		<link href="melon/assets/css/ie8.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+	<!--=== JavaScript ===-->
+
+	<script type="text/javascript" src="melon/assets/js/libs/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+
+	<script type="text/javascript" src="melon/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="melon/assets/js/libs/lodash.compat.min.js"></script>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="melon/assets/js/libs/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- Smartphone Touch Events -->
+	<script type="text/javascript" src="melon/plugins/touchpunch/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/event.swipe/jquery.event.move.js"></script>
+	<script type="text/javascript" src="melon/plugins/event.swipe/jquery.event.swipe.js"></script>
+
+	<!-- General -->
+	<script type="text/javascript" src="melon/assets/js/libs/breakpoints.js"></script>
+	<script type="text/javascript" src="melon/plugins/respond/respond.min.js"></script> <!-- Polyfill for min/max-width CSS3 Media Queries (only for IE8) -->
+	<script type="text/javascript" src="melon/plugins/cookie/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+
+	<!-- Page specific plugins -->
+	<!-- Charts -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="melon/plugins/flot/excanvas.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="melon/plugins/sparkline/jquery.sparkline.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/flot/jquery.flot.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/flot/jquery.flot.tooltip.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/flot/jquery.flot.resize.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/flot/jquery.flot.time.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/flot/jquery.flot.growraf.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+	<script type="text/javascript" src="melon/plugins/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/daterangepicker/daterangepicker.js"></script>
+	<script type="text/javascript" src="melon/plugins/blockui/jquery.blockUI.min.js"></script>
+
+	<script type="text/javascript" src="melon/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+	<!-- Noty -->
+	<script type="text/javascript" src="melon/plugins/noty/jquery.noty.js"></script>
+	<script type="text/javascript" src="melon/plugins/noty/layouts/top.js"></script>
+	<script type="text/javascript" src="melon/plugins/noty/themes/default.js"></script>
+
+	<!-- Forms -->
+	<script type="text/javascript" src="melon/plugins/uniform/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="melon/plugins/select2/select2.min.js"></script>
+	<!-- App -->
+	<script type="text/javascript" src="melon/assets/js/app.js"></script>
+	<script type="text/javascript" src="melon/assets/js/plugins.js"></script>
+	<script type="text/javascript" src="melon/assets/js/plugins.form-components.js"></script>
+
+    <script type="text/javascript" src="AssClass/js/AssClass.js" charset="utf-8"></script>
+    <script type="text/javascript" src="AssClass/js/total.js" charset="utf-8"></script>
+    <!-- 插件信息 -->
+    <!-- 下拉插件 -->
+    <script type="text/javascript" src="AssClass/other/select/jquery-editable-select.js" charset="UTF-8"></script>
+    <link rel="stylesheet" type="text/css" href="AssClass/other/select/jquery-editable-select.css"/>
+    <!-- 导出插件 -->
+	<script type="text/javascript" src="QMaker/other/angular.min.js"></script>
+    <script type="text/javascript" src="QMaker/other/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="QMaker/other/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="QMaker/other/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="QMaker/other/angular-resource.js"></script>
+    <script type="text/javascript" src="QMaker/other/angular-sanitize.js"></script>
+	
+	
+	<script type="text/javascript" src="QMaker/js/filter.js"></script>
+	<script type="text/javascript" src="QMaker/js/controller.js"></script>
+	<script type="text/javascript" src="QMaker/js/router.js"></script>
+	<script type="text/javascript" src="QMaker/js/services.js"></script>
+	<script type="text/javascript" src="QMaker/js/qmaker.js"></script>
+	<script>
+	$(document).ready(function(){
+		"use strict";
+
+		App.init(); // Init layout and core plugins
+		Plugins.init(); // Init all plugins
+		FormComponents.init(); // Init all form-specific plugins
+
+	});
+	</script>
+	<style>
+        .btnClass{
+            background-color: #5bc0de;
+            color: #fff;
+            border-color: #46b8da
+        }
+        table{margin:0 auto;border-collapse:collapse; }
+        td, th{font-size:14px; padding:10px 0; text-align:center;border:1px solid #ddd; }
+        /* input */
+        td.input{ position:relative; }
+        td input{ width:100%; border:1px solid #CF5C74; background:#F90; border-radius:4px; display:block; position:absolute; text-align:center;font-size:14px; left:0; top:0; padding:11px 0; margin:-1px 0 0 -1px; }
+        td.hover{background:#eee;}
+    </style>
+</head>
+<body>
+	<!-- Header -->
+	<header class="header navbar navbar-fixed-top" role="banner">
+		<!-- Top Navigation Bar -->
+		<div class="container">
+			<!-- Only visible on smartphones, menu toggle -->
+			<ul class="nav navbar-nav">
+				<li class="nav-toggle">
+                    <a href="javascript:void(0);" title=""><i class="icon-reorder"></i></a>
+                </li>
+			</ul>
+
+			<!-- Logo -->
+			<a class="navbar-brand" href="index.html">
+				<img src="" alt="logo" />
+				<strong>嘉应学院教学平台</strong>
+			</a>
+			<!-- /logo -->
+			<!-- Sidebar Toggler -->
+			<a href="#" class="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation">
+				<i class="icon-reorder"></i>
+			</a>
+			<!-- /Sidebar Toggler -->
+		</div>
+		<!-- /top navigation bar -->
+
+		<!--=== Project Switcher ===-->
+		<div id="project-switcher" class="container project-switcher">
+			<div id="scrollbar">
+				<div class="handle"></div>
+			</div>
+		</div> <!-- /#project-switcher -->
+	</header> <!-- /.header -->
+
+	<div id="container">
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+				<!--=== Navigation ===-->
+				<ul id="nav">
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon-edit"></i>
+							培养方案
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#/AssClass" onclick="getAssClass();">
+								<i class="icon-angle-right"></i>
+								课程设置计划
+								</a>
+							</li>
+							<li>
+								<a href="#/TotalClass" onclick="getTotal();">
+								<i class="icon-angle-right"></i>
+								课程类别累总
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+					<a href="javascript:void(0);">
+							<i class="icon-edit"></i>
+							题库
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#/questionList">
+								<i class="icon-angle-right"></i>
+									试题列表
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+		<div id="content" ui-view>
+			
+		</div>
+	</div>
+</body>
+</html>
